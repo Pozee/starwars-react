@@ -2,37 +2,116 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar > input {
+  font-weight: 700;
+  margin: 1em;
+  margin-right: 0;
+  height: 1.5em;
+  width: 50vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-bar > button {
+margin: 0.2em;
+font-weight: 700;
+width: 150px;
+}
+
+.result-container {
+  position: relative;
+  margin: 0px auto;
+  display: inline-block;
+  height: 3em;
+  width: 50vw;
+  padding: 1.5em;
+  margin: 1em;
+  border: 1px solid black;
+  background-color: rgba(198, 199, 199, 0.288);
+  border-radius: 5px;
+}
+.result-container > p {
+  position: absolute;
+  margin: 0;
+}
+.result-container > .name {
+  top: 0;
+  left: 0;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 0.4em;
+  margin:0 ;
+}
+
+.favorite {
+  padding: 0.2em;
+  position:absolute;
+  display: inline-block;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+}
+.new-favorite {
+  margin: 0;
+  padding: 0;
+  color: green;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  left: 2em;
+}
+.result-container > .eye-color {
+  padding-left: 0.4em;
+  position: absolute;
+  left: 0;
+  bottom: 20%;
+}
+.eye-color > span {
+  font-style: italic;
+  font-weight: 600;
+}
+.birth-year > span {
+  font-style: italic;
+  font-weight: 600;
+}
+.result-container .birth-year  {
+  padding-right: 0.4em;
+  position: absolute;
+  right: 0;
+  bottom: 20%;
+}
+
+.grow { transition: all .1s ease-in-out; }
+.grow:hover { transform: scale(1.2); }
+.active:active {transform: scale(1.1);}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+}
+.form-container input {
+  margin: 0.3em 0;
+  width: 25vw;
+  outline: none;
+}
+.form-container label {
+  text-align: left;
+}
+
+.form-container button {
+  width: 5em;
+  font-weight: 700;
+}
+.form-container input:focus {
+border: 2px solid rgba(0, 0, 255, 0.301);
 }
