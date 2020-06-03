@@ -16,16 +16,21 @@ const ApiData = () => {
 
 
     async function getData() {
-        let url = `https://swapi.dev/api/people/?page=1`;
+        // let nextUrl = "1";
+        // let apiUrl = `https://swapi.dev/api/people/?page=${nextUrl}`;
+        let apiUrl = `https://swapi.dev/api/people/?page=1`;
         let hasMorePages = true;
+
         while (hasMorePages) {
-            const response = await fetch(url);
+            const response = await fetch(apiUrl);
             const json = await response.json();
             if (!json.next) hasMorePages = false;
-            url = json.next;
-            json.results.map((obj) => {
-                return rawData.push(obj)
-            })
+            if (hasMorePages) {
+                apiUrl = json.next.replace("http", "https");
+                json.results.map((obj) => {
+                    return rawData.push(obj)
+                })
+            }
         }
         filterData();
     };
